@@ -31,6 +31,20 @@ class UniqueCollectionTest {
     }
 
     @Test
+    fun removeAnItem(){
+        collection.addItem(Item("Item1"))
+        collection.addItem(Item("Item2"))
+        collection.addItem(Item("Item3"))
+
+        collection.remove(Item("Item2"))
+
+        assert(collection.size()==2)
+        assert(collection.get(0) ==Item("Item1"))
+        assert(collection.get(1) ==Item("Item3"))
+    }
+
+
+    @Test
     fun clearAllItems() {
         collection.addItem(Item("item1"))
         collection.addItem(Item("Item2"))
